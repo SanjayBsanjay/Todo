@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff99cc, #66ccff); /* Vibrant gradient background */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333; /* Dark text for readability */
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 50px auto;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.03);
+}
+
+h1 {
+    color: #2c3e50; /* Darker color for the main title for better contrast */
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.todo-form {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.todo-form input, .todo-form select, .todo-form button {
+    padding: 12px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.todo-form input, .todo-form select {
+    width: 200px;
+    background-color: #f9f9f9;
+    color: #333; /* Input text color */
+}
+
+.todo-form button {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.todo-form input:focus, .todo-form select:focus {
+    border-color: #3498db;
+}
+
+.todo-form button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+.todo-form input:hover, .todo-form select:hover {
+    background-color: #eaf2f7;
+}
+
+.todo-list {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    text-align: center;
+}
+
+.todo-list th, .todo-list td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.todo-list th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #2c3e50; /* Darker color for table header text */
+}
+
+.todo-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.todo-list tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.6;
+}
+
+.button-complete, .button-delete {
+    padding: 8px 15px;
+    margin-left: 6px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.button-complete {
+    background-color: #4CAF50; /* Green for complete */
+}
+
+.button-delete {
+    background-color: #E74C3C; /* Red for delete */
+}
+
+.button-complete:hover {
+    background-color: #45a049;
+    opacity: 0.8;
+    transform: translateY(-3px);
+}
+
+.button-delete:hover {
+    background-color: #c0392b;
+    opacity: 0.8;
+    transform: translateY(-3px);
+}
+
+.low-priority {
+    color: #27ae60; /* Green for low priority */
+    font-weight: bold;
+}
+
+.medium-priority {
+    color: #f39c12; /* Yellow for medium priority */
+    font-weight: bold;
+}
+
+.high-priority {
+    color: #e74c3c; /* Red for high priority */
+    font-weight: bold;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.todo-form input, .todo-form select, .todo-form button {
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .todo-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .todo-form input, .todo-form select {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .todo-form button {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
